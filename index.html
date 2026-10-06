@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 模型风云榜 · 2026 年 10 月</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+
+<!-- 背景光晕 -->
+<div class="bg-orbs">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<!-- 顶部导航 -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-mark">◆</span>
+      <span>AI 模型风云榜</span>
+    </div>
+    <div class="nav-links">
+      <a href="#highlights">今日格局</a>
+      <a href="#ranking">排行榜</a>
+      <a href="#scatter">性价比象限</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-badge">2026 年 10 月 · 数据持续更新</div>
+  <h1>谁才是这个时代<br>最强的 <span class="grad-text">AI 大脑</span>？</h1>
+  <p class="hero-sub">覆盖文本 / 写作 / 代码 / 多模态 / 画图 五大维度，60+ 热门模型横评，附 B 站实测视频。</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="num" data-target="65">0</div><div class="label">热门模型</div></div>
+    <div class="stat"><div class="num" data-target="5">0</div><div class="label">能力维度</div></div>
+    <div class="stat"><div class="num" data-target="8">0</div><div class="label">亮点榜单</div></div>
+    <div class="stat"><div class="num" data-target="100">0</div><div class="label">%</div></div>
+  </div>
+</header>
+
+<!-- 今日格局 -->
+<section id="highlights" class="section">
+  <h2 class="section-title">今日格局</h2>
+  <div class="highlight-grid" id="highlightGrid"></div>
+</section>
+
+<!-- 排行榜 -->
+<section id="ranking" class="section">
+  <div class="ranking-head">
+    <h2 class="section-title">能力排行榜</h2>
+    <div class="toolbar">
+      <input type="text" id="searchBox" placeholder="搜索模型 / 厂商…" class="search-input">
+      <div class="filter-group" id="filterGroup">
+        <button class="filter-btn active" data-f="all">全部</button>
+        <button class="filter-btn" data-f="china">国内</button>
+        <button class="filter-btn" data-f="global">国外</button>
+        <button class="filter-btn" data-f="open">开源</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabBar">
+    <button class="tab active" data-dim="intel">🧠 智力榜</button>
+    <button class="tab" data-dim="writing">✍️ 写作榜</button>
+    <button class="tab" data-dim="coding">💻 代码榜</button>
+    <button class="tab" data-dim="vision">👁️ 多模态榜</button>
+    <button class="tab" data-dim="image">🎨 画图榜</button>
+  </div>
+
+  <div class="rank-table glass" id="rankTable"></div>
+  <div class="table-note" id="tableNote"></div>
+</section>
+
+<!-- 性价比散点图 -->
+<section id="scatter" class="section">
+  <h2 class="section-title">性价比象限 <span class="title-tip">越靠左上角 = 又强又便宜</span></h2>
+  <div class="glass chart-box">
+    <div id="scatterChart" style="width:100%;height:480px;"></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>数据为综合公开榜单（LMSYS / 各权威基准 / 鱼皮等 UP 主实测）的参考估值，非精确跑分。</p>
+  <p>B 站测评视频版权归原 UP 主所有 · Made with ❤ for AI 爱好者</p>
+</footer>
+
+<!-- 模型详情弹窗 -->
+<div class="modal-mask" id="modalMask">
+  <div class="modal glass">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
